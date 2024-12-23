@@ -105,6 +105,16 @@
             Console.WriteLine($"Maximum value: {max}");
             Console.WriteLine($"Minimum value: {min}");
         }
+
+        public static int Factorial(int num)
+        {
+            int factorial = 1;
+            for (int i = 2; i <= num; i++) 
+            {
+                factorial *= i;
+            }
+            return factorial;
+        }
         static void Main(string[] args)
         {
             #region Demo
@@ -397,6 +407,17 @@
             //    }
             //}
             //MinMaxArray(ref arr);
+            #endregion
+
+            #region Q7
+            //Console.Write("Enter a number: ");
+            //int num;
+            //while (!int.TryParse(Console.ReadLine(), out num) || num < 0)
+            //{
+            //    Console.Write("Please enter a valid integer : ");
+            //}
+            //int res = Factorial(num); // Call the non-recursive function
+            //Console.WriteLine($"The factorial of {num} is: {res}");
             #endregion
             #endregion
         }
