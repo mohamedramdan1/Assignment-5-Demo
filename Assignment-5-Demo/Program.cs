@@ -36,7 +36,8 @@
         public static int SumArray(ref int[] Arr)// refrence type passing by value
         {
             int Sum = 0;
-            Arr[0] = 100;
+            //Arr[0] = 100;
+            Arr = new int[] { 4, 5, 6 };
             for (int i = 0; i < Arr.Length; i++)
                 Sum += Arr[i];
             return Sum;
@@ -55,6 +56,70 @@
             return Sum;
         }
 
+        public static void SumSub(int x , int y , out int sum , out int sub)
+        {
+            sum = x + y;
+            sub = x - y;
+        }
+
+        public static int SumDigit(int num)
+        {
+            int sum = 0;
+            while (num != 0)
+            {
+                sum += num % 10; 
+                num /= 10;       
+            }
+            return sum;
+        }
+
+        public static bool ISPrime(int num) 
+        {
+            if (num % 2 == 0)
+            {
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static void MinMaxArray(int[] arr , ref int min , ref int max)
+        {
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                }
+
+                if (arr[i] < min)
+                {
+                    min = arr[i];
+                }
+            }
+         
+        }
+
+        public static int Factorial(int num)
+        {
+            int factorial = 1;
+            for (int i = 2; i <= num; i++) 
+            {
+                factorial *= i;
+            }
+            return factorial;
+        }
+
+        public static string ChangeChar(string text, int pos , char newchar)
+        {
+            char[] newtext = text.ToCharArray();
+            newtext[pos] = newchar;
+            return new string(newtext);
+        }
         static void Main(string[] args)
         {
             #region Demo
@@ -239,6 +304,149 @@
             #region Params
             //int[] numbers = { 1, 2, 3 };
             //Console.WriteLine(SumArray01(1,2,3));
+            #endregion
+            #endregion
+
+            #region Assignment
+
+            #region Q1
+            /*
+            the diffrence between the [Valua type] passing by paramter & passing by refrence that
+            passing by paramter : pass the value only in stack , and any change inside the main()
+            will not affect the original variable. 
+
+            passing by refrence :using Keyword ref pass value and varaibles in stack , and any change inside the main()
+            will affect the original variable, and funcrion swap() will make swap stack frame that have only
+            varaible and the parameter will be with main stack frame .
+            */
+            //ex Passing By Value 
+            //int A = 9, B = 4;
+            //Console.WriteLine(A); // 9
+            //Console.WriteLine(B); // 4
+            //SWAP(A, B);
+            //Console.WriteLine(A);//9
+            //Console.WriteLine(B);//4
+
+            //ex Passing By Refence 
+            //int A = 9, B = 4;
+            //Console.WriteLine(A); // 9
+            //Console.WriteLine(B); // 4
+            //SWAP(ref A, ref B); 
+            //Console.WriteLine(A); // 4
+            //Console.WriteLine(B); // 9
+            #endregion
+
+            #region Q2
+            /*
+            the diffrence between the [Refrence type] passing by paramter & passing by refrence that
+            passing by paramter : pass the address only to the parameter in the stack so that parameter in the 
+            stack will will have the address of the same address of the refrence in the main(), 
+            and any change inside the heep will  affect the original variable. 
+
+
+            passing by refrence :using Keyword ref pass the refrence and object in heep
+            to the method parameter and the method[function] will be in the same stack of main ,and this allow
+            Modify the object's contents, and Change the reference itself (e.g.,  new object in the function itself)
+            */
+            //ex Passing By Value
+            //int[] Numbers = { 1, 2, 3 }; //refrence type
+            //Console.WriteLine(SumArray(Numbers));//105 // passing by value [address]
+            //Console.WriteLine(Numbers[0]);//100
+
+            //ex Passing By Refrence
+            //int[] Numbers = { 1, 2, 3 }; //refrence type
+            //Console.WriteLine(SumArray(ref Numbers));//15 // passing by refrence [address & object]
+            //Console.WriteLine(Numbers[0]);//4
+            #endregion
+
+            #region Q3
+            //Console.Write("Enter the num01 : ");
+            //int x = int.Parse(Console.ReadLine());
+            //Console.Write("Enter the num02 : ");
+            //int y = int.Parse(Console.ReadLine());
+            //int sum, sub;
+            //SumSub(x,y,out sum, out sub);
+            //Console.WriteLine($"Summation result : {sum}");
+            //Console.WriteLine($"Subtraction result : {sub}");
+            #endregion
+
+            #region Q4
+            //Console.Write("Enter the number : ");
+            //int num;
+            //while (!int.TryParse(Console.ReadLine(), out num) || num < 0)
+            //{
+            //    Console.Write("Invalid input! Please enter a valid integer : ");
+            //}
+            //int res = SumDigit(num);
+            //Console.Write($" The sum of the digits of the number {num} is : {res}");
+            #endregion
+
+            #region Q5
+            //Console.Write("Enter the number : ");
+            //int num;
+            //while (!int.TryParse(Console.ReadLine(), out num) || num < 0)
+            //{
+            //    Console.Write("Invalid input! Please enter a valid integer : ");
+            //}
+            //Console.WriteLine(ISPrime(num)); 
+            #endregion
+
+            #region Q6
+            //Console.Write("Enter the number of element in array = ");
+            //int n;
+            //while (!int.TryParse(Console.ReadLine(), out n) || n <= 0)
+            //{
+            //    Console.Write("Please enter a valid positive number for the array size: ");
+            //}
+            //int[] arr = new int[n];
+
+            //Console.WriteLine("Enter elements for the array : ");
+            //for (int i = 0; i < n;)
+            //{
+            //    bool Flag;
+            //    Console.Write($"Element {i + 1}  : ");
+            //    Flag = int.TryParse(Console.ReadLine(), out arr[i]);
+            //    if (Flag)
+            //    {
+            //        i++;
+            //    }
+            //}
+            //int min = 0;
+            //int max = 0; 
+            //MinMaxArray(arr ,ref min , ref max );
+            //Console.WriteLine($"Maximum value: {max}");
+            //Console.WriteLine($"Minimum value: {min}");
+            #endregion
+
+            #region Q7
+            //Console.Write("Enter a number: ");
+            //int num;
+            //while (!int.TryParse(Console.ReadLine(), out num) || num < 0)
+            //{
+            //    Console.Write("Please enter a valid integer : ");
+            //}
+            //int res = Factorial(num); // Call the non-recursive function
+            //Console.WriteLine($"The factorial of {num} is: {res}");
+            #endregion
+
+            #region Q8
+            //Console.Write("Enter a string : ");
+            //string text = Console.ReadLine();
+
+            //Console.Write("Enter the position to modify : ");
+            //int pos = int.Parse(Console.ReadLine());
+            //while (pos <= 0 || pos > text.Length)
+            //{
+            //    Console.Write("Enter the correct pos : ");
+            //    pos = int.Parse(Console.ReadLine());
+            //}
+            //Console.Write("Enter the new char : ");
+            //char newchar = Console.ReadKey().KeyChar;
+
+            //string res = ChangeChar(text, pos -1, newchar);
+
+            //Console.WriteLine("");
+            //Console.WriteLine($"The Modified string: {res}");
             #endregion
             #endregion
         }
