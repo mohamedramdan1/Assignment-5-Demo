@@ -86,6 +86,25 @@
             }
         }
 
+        public static void MinMaxArray(ref int[] arr)
+        {
+            int min = arr[0];
+            int max = arr[0];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                }
+
+                if (arr[i] < min)
+                {
+                    min = arr[i];
+                }
+            }
+            Console.WriteLine($"Maximum value: {max}");
+            Console.WriteLine($"Minimum value: {min}");
+        }
         static void Main(string[] args)
         {
             #region Demo
@@ -355,6 +374,29 @@
             //    Console.Write("Invalid input! Please enter a valid integer : ");
             //}
             //Console.WriteLine(ISPrime(num)); 
+            #endregion
+
+            #region Q6
+            //Console.Write("Enter the number of element in array = ");
+            //int n;
+            //while (!int.TryParse(Console.ReadLine(), out n) || n <= 0)
+            //{
+            //    Console.Write("Please enter a valid positive number for the array size: ");
+            //}
+            //int[] arr = new int[n];
+
+            //Console.WriteLine("Enter elements for the array : ");
+            //for (int i = 0; i < n;)
+            //{
+            //    bool Flag;
+            //    Console.Write($"Element {i + 1}  : ");
+            //    Flag = int.TryParse(Console.ReadLine(), out arr[i]);
+            //    if (Flag)
+            //    {
+            //        i++;
+            //    }
+            //}
+            //MinMaxArray(ref arr);
             #endregion
             #endregion
         }
