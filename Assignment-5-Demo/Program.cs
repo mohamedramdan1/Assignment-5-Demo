@@ -72,6 +72,20 @@
             }
             return sum;
         }
+
+        public static bool ISPrime(int num) 
+        {
+            if (num % 2 == 0)
+            {
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         static void Main(string[] args)
         {
             #region Demo
@@ -331,6 +345,16 @@
             //}
             //int res = SumDigit(num);
             //Console.Write($" The sum of the digits of the number {num} is : {res}");
+            #endregion
+
+            #region Q5
+            //Console.Write("Enter the number : ");
+            //int num;
+            //while (!int.TryParse(Console.ReadLine(), out num) || num < 0)
+            //{
+            //    Console.Write("Invalid input! Please enter a valid integer : ");
+            //}
+            //Console.WriteLine(ISPrime(num)); 
             #endregion
             #endregion
         }
