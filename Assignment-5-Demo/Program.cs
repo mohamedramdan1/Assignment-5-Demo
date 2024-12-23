@@ -56,10 +56,10 @@
             return Sum;
         }
 
-        public static void SumSub(int x , int y , int c, int d, out int sum , out int sub)
+        public static void SumSub(int x , int y , out int sum , out int sub)
         {
             sum = x + y;
-            sub = c - d;
+            sub = x - y;
         }
 
         static void Main(string[] args)
@@ -302,18 +302,14 @@
             #endregion
 
             #region Q3
-            //Console.Write("Enter the num01 : ");
-            //int x = int.Parse(Console.ReadLine());
-            //Console.Write("Enter the num02 : ");
-            //int y = int.Parse(Console.ReadLine());
-            //Console.Write("Enter the num03 : ");
-            //int c = int.Parse(Console.ReadLine());
-            //Console.Write("Enter the num04 : ");
-            //int d = int.Parse(Console.ReadLine());
-            //int sum, sub;
-            //SumSub(x, y, c, d, out sum, out sub);
-            //Console.WriteLine($"Summation result [num01+num02]  : {sum}");
-            //Console.WriteLine($"Subtraction result [num03-num04] : {sub}");
+            Console.Write("Enter the num01 : ");
+            int x = int.Parse(Console.ReadLine());
+            Console.Write("Enter the num02 : ");
+            int y = int.Parse(Console.ReadLine());
+            int sum, sub;
+            SumSub(x,y,out sum, out sub);
+            Console.WriteLine($"Summation result : {sum}");
+            Console.WriteLine($"Subtraction result : {sub}");
             #endregion
             #endregion
         }
