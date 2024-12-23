@@ -62,6 +62,16 @@
             sub = x - y;
         }
 
+        public static int SumDigit(int num)
+        {
+            int sum = 0;
+            while (num != 0)
+            {
+                sum += num % 10; 
+                num /= 10;       
+            }
+            return sum;
+        }
         static void Main(string[] args)
         {
             #region Demo
@@ -302,14 +312,25 @@
             #endregion
 
             #region Q3
-            Console.Write("Enter the num01 : ");
-            int x = int.Parse(Console.ReadLine());
-            Console.Write("Enter the num02 : ");
-            int y = int.Parse(Console.ReadLine());
-            int sum, sub;
-            SumSub(x,y,out sum, out sub);
-            Console.WriteLine($"Summation result : {sum}");
-            Console.WriteLine($"Subtraction result : {sub}");
+            //Console.Write("Enter the num01 : ");
+            //int x = int.Parse(Console.ReadLine());
+            //Console.Write("Enter the num02 : ");
+            //int y = int.Parse(Console.ReadLine());
+            //int sum, sub;
+            //SumSub(x,y,out sum, out sub);
+            //Console.WriteLine($"Summation result : {sum}");
+            //Console.WriteLine($"Subtraction result : {sub}");
+            #endregion
+
+            #region Q4
+            //Console.Write("Enter the number : ");
+            //int num;
+            //while (!int.TryParse(Console.ReadLine(), out num) || num < 0)
+            //{
+            //    Console.Write("Invalid input! Please enter a valid integer : ");
+            //}
+            //int res = SumDigit(num);
+            //Console.Write($" The sum of the digits of the number {num} is : {res}");
             #endregion
             #endregion
         }
