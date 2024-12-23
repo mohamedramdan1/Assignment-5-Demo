@@ -241,6 +241,38 @@
             //Console.WriteLine(SumArray01(1,2,3));
             #endregion
             #endregion
+
+            #region Assignment
+
+            #region Q1
+            /*
+            the diffrence between the [Valua type] passing by paramter & passing by refrence that
+            passing by paramter : pass the value only in stack , and any change inside the main()
+            will not affect the original variable. 
+
+            passing by refrence :using Keyword ref pass value and varaibles in stack , and any change inside the main()
+            will affect the original variable, and funcrion swap() will make swap stack frame that have only
+            varaible and the parameter will be with main stack frame .
+            */
+            //ex Passing By Value 
+            //int A = 9, B = 4;
+            //Console.WriteLine(A); // 9
+            //Console.WriteLine(B); // 4
+            //SWAP(A, B);
+            //Console.WriteLine(A);//9
+            //Console.WriteLine(B);//4
+
+            //ex Passing By Refence 
+            //int A = 9, B = 4;
+            //Console.WriteLine(A); // 9
+            //Console.WriteLine(B); // 4
+            //SWAP(ref A, ref B); 
+            //Console.WriteLine(A); // 4
+            //Console.WriteLine(B); // 9
+            #endregion
+
+
+            #endregion
         }
     }
 }
