@@ -115,6 +115,13 @@
             }
             return factorial;
         }
+
+        public static string ChangeChar(string text, int pos , char newchar)
+        {
+            char[] newtext = text.ToCharArray();
+            newtext[pos] = newchar;
+            return new string(newtext);
+        }
         static void Main(string[] args)
         {
             #region Demo
@@ -418,6 +425,26 @@
             //}
             //int res = Factorial(num); // Call the non-recursive function
             //Console.WriteLine($"The factorial of {num} is: {res}");
+            #endregion
+
+            #region Q8
+            //Console.Write("Enter a string : ");
+            //string text = Console.ReadLine();
+
+            //Console.Write("Enter the position to modify : ");
+            //int pos = int.Parse(Console.ReadLine());
+            //while (pos <= 0 || pos > text.Length)
+            //{
+            //    Console.Write("Enter the correct pos : ");
+            //    pos = int.Parse(Console.ReadLine());
+            //}
+            //Console.Write("Enter the new char : ");
+            //char newchar = Console.ReadKey().KeyChar;
+
+            //string res = ChangeChar(text, pos -1, newchar);
+
+            //Console.WriteLine("");
+            //Console.WriteLine($"The Modified string: {res}");
             #endregion
             #endregion
         }
