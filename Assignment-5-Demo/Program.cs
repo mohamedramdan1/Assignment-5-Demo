@@ -86,10 +86,9 @@
             }
         }
 
-        public static void MinMaxArray(ref int[] arr)
+        public static void MinMaxArray(int[] arr , ref int min , ref int max)
         {
-            int min = arr[0];
-            int max = arr[0];
+
             for (int i = 0; i < arr.Length; i++)
             {
                 if (arr[i] > max)
@@ -102,8 +101,7 @@
                     min = arr[i];
                 }
             }
-            Console.WriteLine($"Maximum value: {max}");
-            Console.WriteLine($"Minimum value: {min}");
+         
         }
 
         public static int Factorial(int num)
@@ -413,7 +411,11 @@
             //        i++;
             //    }
             //}
-            //MinMaxArray(ref arr);
+            //int min = 0;
+            //int max = 0; 
+            //MinMaxArray(arr ,ref min , ref max );
+            //Console.WriteLine($"Maximum value: {max}");
+            //Console.WriteLine($"Minimum value: {min}");
             #endregion
 
             #region Q7
