@@ -36,7 +36,8 @@
         public static int SumArray(ref int[] Arr)// refrence type passing by value
         {
             int Sum = 0;
-            Arr[0] = 100;
+            //Arr[0] = 100;
+            Arr = new int[] { 4, 5, 6 };
             for (int i = 0; i < Arr.Length; i++)
                 Sum += Arr[i];
             return Sum;
@@ -271,6 +272,28 @@
             //Console.WriteLine(B); // 9
             #endregion
 
+            #region Q2
+            /*
+            the diffrence between the [Refrence type] passing by paramter & passing by refrence that
+            passing by paramter : pass the address only to the parameter in the stack so that parameter in the 
+            stack will will have the address of the same address of the refrence in the main(), 
+            and any change inside the heep will  affect the original variable. 
+
+
+            passing by refrence :using Keyword ref pass the refrence and object in heep
+            to the method parameter and the method[function] will be in the same stack of main ,and this allow
+            Modify the object's contents, and Change the reference itself (e.g.,  new object in the function itself)
+            */
+            //ex Passing By Value
+            //int[] Numbers = { 1, 2, 3 }; //refrence type
+            //Console.WriteLine(SumArray(Numbers));//105 // passing by value [address]
+            //Console.WriteLine(Numbers[0]);//100
+
+            //ex Passing By Refrence
+            //int[] Numbers = { 1, 2, 3 }; //refrence type
+            //Console.WriteLine(SumArray(ref Numbers));//15 // passing by refrence [address & object]
+            //Console.WriteLine(Numbers[0]);//4
+            #endregion
 
             #endregion
         }
